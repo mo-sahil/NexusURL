@@ -1,5 +1,7 @@
 package com.example.urlshortener.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,12 +10,24 @@ import java.util.*;
 
 @Document(collection = "urls")
 public class Url {
+    @Setter
+    @Getter
     @Id
     private String id;
+    @Setter
+    @Getter
     private String originalUrl;
+    @Setter
+    @Getter
     private String shortUrl;
+    @Setter
+    @Getter
     private LocalDateTime creationDate;
+    @Setter
+    @Getter
     private LocalDateTime expirationDate;
+    @Setter
+    @Getter
     private int clickCount;
     private List<Click> clicks = new ArrayList<>();
 
@@ -23,7 +37,6 @@ public class Url {
         private String userAgent;
         private String ipAddress;
 
-        // Constructors, getters, setters
         public Click() {}
 
         public Click(LocalDateTime clickTime, String referrer, String userAgent, String ipAddress) {
@@ -82,51 +95,4 @@ public class Url {
         this.clickCount = 0;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getOriginalUrl() {
-        return originalUrl;
-    }
-
-    public void setOriginalUrl(String originalUrl) {
-        this.originalUrl = originalUrl;
-    }
-
-    public String getShortUrl() {
-        return shortUrl;
-    }
-
-    public void setShortUrl(String shortUrl) {
-        this.shortUrl = shortUrl;
-    }
-
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public LocalDateTime getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(LocalDateTime expirationDate) {
-        this.expirationDate = expirationDate;
-    }
-
-    public int getClickCount() {
-        return clickCount;
-    }
-
-    public void setClickCount(int clickCount) {
-        this.clickCount = clickCount;
-    }
 }

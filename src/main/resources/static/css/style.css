@@ -537,7 +537,6 @@ body {
     border: 1px dashed rgba(0, 240, 255, 0.3);
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .cyber-container {
         padding: 1rem;

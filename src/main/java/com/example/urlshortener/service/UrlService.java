@@ -22,24 +22,20 @@ public class UrlService {
     private UrlRepository urlRepository;
 
     public String shortenUrl(String originalUrl) {
-        // Validate URL format
         if (!originalUrl.startsWith("http://") && !originalUrl.startsWith("https://")) {
             originalUrl = "http://" + originalUrl;
         }
 
-        // Check if URL already exists in database
         Url existingUrl = urlRepository.findByOriginalUrl(originalUrl);
         if (existingUrl != null) {
             return existingUrl.getShortUrl();
         }
 
-        // Generate a unique short URL
         String shortUrl;
         do {
             shortUrl = generateShortUrl();
         } while (urlRepository.existsByShortUrl(shortUrl));
 
-        // Save to database
         Url url = new Url();
         url.setOriginalUrl(originalUrl);
         url.setShortUrl(shortUrl);
@@ -57,7 +53,6 @@ public class UrlService {
             return null;
         }
 
-        // Record the click
         url.setClickCount(url.getClickCount() + 1);
         urlRepository.save(url);
 

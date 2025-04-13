@@ -1,18 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Create animated particles
     createParticles();
-
-    // Initialize event listeners
     initEventListeners();
 });
 
 function initEventListeners() {
-    // Shorten URL on Enter key
     document.getElementById('originalUrl').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') shortenUrl();
     });
 
-    // Stats link handler
     const statsLink = document.getElementById('statsLink');
     if (statsLink) {
         statsLink.addEventListener('click', function(e) {
@@ -31,7 +26,6 @@ function createParticles() {
         const particle = document.createElement('div');
         particle.classList.add('particle');
 
-        // Random properties
         const size = Math.random() * 3 + 1;
         const posX = Math.random() * 100;
         const posY = Math.random() * 100;
@@ -90,7 +84,6 @@ function copyToClipboard() {
     shortUrlInput.select();
     document.execCommand('copy');
 
-    // Visual feedback
     const copyButton = document.querySelector('.short-url-container button');
     copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
     setTimeout(() => {
@@ -131,7 +124,6 @@ function isValidUrl(string) {
 }
 
 function showError(message) {
-    // Create or show error notification
     let errorBox = document.getElementById('error-notification');
     if (!errorBox) {
         errorBox = document.createElement('div');
@@ -152,14 +144,12 @@ function showError(message) {
 
     errorBox.textContent = message;
 
-    // Auto-hide after 3 seconds
     setTimeout(() => {
         errorBox.style.animation = 'fadeOut 0.3s ease-in-out';
         setTimeout(() => errorBox.remove(), 300);
     }, 3000);
 }
 
-// Add CSS animations for error notification
 const style = document.createElement('style');
 style.textContent = `
     @keyframes fadeIn {
