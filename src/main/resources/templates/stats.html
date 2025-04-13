@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusURL Analytics</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="cyber-container">
+  <div class="cyber-card analytics">
+    <div class="header">
+      <div class="logo">
+        <i class="fas fa-chart-network"></i>
+        <h1>Link <span>Analytics</span></h1>
+      </div>
+      <a href="/" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Nexus
+      </a>
+    </div>
+
+    <div class="analytics-grid">
+      <div class="url-info cyber-panel">
+        <h3><i class="fas fa-link"></i> Link Information</h3>
+        <div class="info-row">
+          <span class="label">Short URL:</span>
+          <span class="value" th:text="${url.shortUrl}"></span>
+        </div>
+        <div class="info-row">
+          <span class="label">Original URL:</span>
+          <a class="value" th:href="${url.originalUrl}" th:text="${url.originalUrl}"></a>
+        </div>
+        <div class="info-row">
+          <span class="label">Created:</span>
+          <span class="value" th:text="${#temporals.format(url.creationDate)}"></span>
+        </div>
+        <div class="info-row">
+          <span class="label">Expires:</span>
+          <span class="value" th:text="${#temporals.format(url.expirationDate)}"></span>
+        </div>
+      </div>
+
+      <div class="stats-summary cyber-panel">
+        <h3><i class="fas fa-activity"></i> Performance Metrics</h3>
+        <div class="stat-cards">
+          <div class="stat-card primary">
+            <div class="stat-icon">
+              <i class="fas fa-mouse-pointer"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-value" th:text="${url.clickCount}">0</span>
+              <span class="stat-label">Total Clicks</span>
+            </div>
+          </div>
+          <div class="stat-card secondary">
+            <div class="stat-icon">
+              <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-value">87%</span>
+              <span class="stat-label">Engagement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="click-chart cyber-panel">
+        <h3><i class="fas fa-chart-bar"></i> Click Timeline</h3>
+        <div class="chart-placeholder">
+          <p>Visualization coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

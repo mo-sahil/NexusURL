@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusURL - Futuristic Link Shortener</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="cyber-container">
+    <div class="cyber-card">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-link"></i>
+                <h1>Nexus<span>URL</span></h1>
+            </div>
+            <p class="tagline">The future of link management</p>
+        </div>
+
+        <div class="input-field">
+            <div class="cyber-input">
+                <input type="text" id="originalUrl" placeholder="Paste your quantum link here...">
+                <div class="input-border"></div>
+            </div>
+            <div class="button-container">
+                <button class="cyber-button" onclick="shortenUrl()">
+                    <span class="button-text">Shorten</span>
+                    <span class="button-lights">
+                            <span class="light red"></span>
+                            <span class="light yellow"></span>
+                            <span class="light green"></span>
+                        </span>
+                </button>
+            </div>
+        </div>
+
+        <div id="result" class="result-panel hidden">
+            <div class="success-animation">
+                <div class="checkmark"></div>
+                <p class="success-text">Link compressed successfully!</p>
+            </div>
+
+            <div class="output-field">
+                <div class="cyber-output">
+                    <input type="text" id="shortUrl" readonly>
+                    <div class="output-border"></div>
+                </div>
+                <button class="cyber-button small" onclick="copyToClipboard()">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="action-buttons">
+                <button class="cyber-button secondary" onclick="showQRCodePanel()">
+                    <i class="fas fa-qrcode"></i> Generate QR
+                </button>
+                <a id="statsLink" href="#" class="cyber-button secondary">
+                    <i class="fas fa-chart-line"></i> Analytics
+                </a>
+            </div>
+        </div>
+
+        <div id="qrCodeContainer" class="qr-panel hidden">
+            <div class="qr-header">
+                <h3><i class="fas fa-qrcode"></i> Quantum Code</h3>
+                <button class="close-btn" onclick="hideQRCodePanel()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <img id="qrCodeImage" src="" alt="QR Code">
+            <button class="cyber-button" onclick="downloadQRCode()">
+                <i class="fas fa-download"></i> Download
+            </button>
+        </div>
+    </div>
+
+    <div class="cyber-footer">
+        <p>© 2023 NexusURL Technologies | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="particles-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <!-- More particles will be added by JS -->
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
