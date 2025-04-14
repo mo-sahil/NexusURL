@@ -1,0 +1,56 @@
+# Build output directories
+/build/
+/bin/
+/out/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Log files
+*.log
+logs/
+
+# Dependency caches
+.mvn/
+.gradle/
+
+# Environment files (except those you want to include)
+*.env
+*.properties
+!application*.properties  # Keep Spring Boot config files if needed
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+LICENSE
+/docs/
+
+# Test files
+*.test
+/test/
+/src/test/
+
+# Node/npm files (if you have frontend components)
+node_modules/
+npm-debug.log
+/yarn.lock
+/package-lock.json
+
+# Docker files (except Dockerfile)
+docker-compose*.yml
+!Dockerfile
