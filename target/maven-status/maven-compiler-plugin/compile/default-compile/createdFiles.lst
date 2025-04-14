@@ -1,0 +1,6 @@
+com\example\urlshortener\UrlShortenerApplication.class
+com\example\urlshortener\controller\UrlController.class
+com\example\urlshortener\model\Url.class
+com\example\urlshortener\service\UrlService.class
+com\example\urlshortener\repository\UrlRepository.class
+com\example\urlshortener\model\Url$Click.class
